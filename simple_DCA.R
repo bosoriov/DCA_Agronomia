@@ -14,7 +14,6 @@ by(datos_germinacion$germinacion, datos_germinacion$temperatura, mean)
 modelo_dca <- aov(germinacion ~ temperatura, data = datos_germinacion)
 summary(modelo_dca)
 
-
 #COMPARACIONES MÚLTIPLES
 # Cargar librerías necesarias
 if(!require(agricolae)) install.packages("agricolae")
