@@ -1,5 +1,3 @@
-# Ejercicio 1
-
 # 1. Crear el conjunto de datos de germinación
 temperatura <- factor(rep(c("T20", "T25", "T30", "T35"), each = 5))
 germinacion <- c(65, 68, 62, 64, 66,   # T20
