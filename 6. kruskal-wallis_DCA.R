@@ -10,7 +10,7 @@ datos_np <- data.frame(bioinsumo, severidad_daño)
 mod_temp <- aov(severidad_daño ~ bioinsumo, data = datos_np)
 shapiro.test(residuals(mod_temp)) 
 
-#!Aunque el p-valor dice que se cumple la normalidad, el qqplot dice que No!
+#!Aunque el p-valor dice que se cumple la normalidad, el qqplot dice que NO!
 
 # 3. Aplicar la prueba no paramétrica de Kruskal-Wallis
 kruskal_res <- kruskal.test(severidad_daño ~ bioinsumo, data = datos_np)
