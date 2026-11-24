@@ -44,7 +44,7 @@ altura_inicial <- c(12, 14, 13, 15, 12, 13,   # Control
                     18, 17, 19, 20, 18, 19,   # Abono A (tenían ventaja inicial)
                     10, 11, 10, 12, 11, 10)   # Abono B
 altura_final   <- c(25, 27, 26, 28, 25, 26,   # Control
-                    38, 37, 40, 42, 39, 40,   # Abono A
+                    38, 37, 39, 42, 38, 39,   # Abono A
                     30, 32, 31, 33, 31, 30)   # Abono B
 
 datos_ancova <- data.frame(tratamiento, altura_inicial, altura_final)
@@ -64,7 +64,5 @@ library(emmeans)
 medias_ancova <- emmeans(modelo_ancova, ~ tratamiento)
 print(medias_ancova)
 
-modelo_2 <- aov(altura_final ~ tratamiento, data = datos_ancova)
-summary(modelo_2)
-
-tapply(altura_final, tratamiento, mean, na.rm = TRUE)
+# 5. Comparación de medias ajustadas (Tukey)
+pairs(medias_ancova, adjust = "tukey")
